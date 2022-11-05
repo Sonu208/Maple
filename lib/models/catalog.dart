@@ -19,11 +19,5 @@ class Item {
   final String color;
   final String image;
 
-  Item(
-      {required this.id,
-      required this.name,
-      required this.desc,
-      required this.price,
-      required this.color,
-      required this.image});
+  Item({required this.id, required this.name,required this.desc,required this.price,required this.color,required this.image});
 }
