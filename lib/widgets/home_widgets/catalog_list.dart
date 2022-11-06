@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/models/catalog.dart';
-import 'package:flutter_catalog/pages/home_details.dart';
 import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../../pages/home_details.dart';
 import 'catalog_image.dart';
 
 class CatalogList extends StatelessWidget {
@@ -13,7 +13,7 @@ class CatalogList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: CatalogModel.items!.length,
       itemBuilder: (context, index) {
-        final catalog = CatalogModel.getByPosition(index);
+        final catalog = CatalogModel.items![index];
         return InkWell(
           onTap: () => Navigator.push(
             context,
@@ -63,6 +63,7 @@ class CatalogItem extends StatelessWidget {
                     onPressed: () {},
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
+                            // ignore: deprecated_member_use
                             context.theme.buttonColor),
                         shape: MaterialStateProperty.all(
                           StadiumBorder(),
