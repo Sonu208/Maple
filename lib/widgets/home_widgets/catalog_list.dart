@@ -11,16 +11,14 @@ class CatalogList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      itemCount: CatalogModel.items?.length,
+      itemCount: CatalogModel.items!.length,
       itemBuilder: (context, index) {
-        final catalog = CatalogModel.items![index];
+        final catalog = CatalogModel.getByPosition(index);
         return InkWell(
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => HomeDetailPage(
-                catalog: catalog,
-              ),
+              builder: (context) => HomeDetailPage(catalog: catalog),
             ),
           ),
           child: CatalogItem(catalog: catalog),
@@ -65,7 +63,6 @@ class CatalogItem extends StatelessWidget {
                     onPressed: () {},
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
-                            // ignore: deprecated_member_use
                             context.theme.buttonColor),
                         shape: MaterialStateProperty.all(
                           StadiumBorder(),
