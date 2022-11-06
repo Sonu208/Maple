@@ -2,38 +2,55 @@
     "products": [
         {
             "id": 1,
-            "name": "iPhone 12 Pro",
-            "desc": "Apple iPhone 12th generation",
+            "name": "iPhone 14 Pro Max",
+            "desc": "128 GB Gold color",
             "price": 999,
             "color": "#33505a",
-            "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-blue-hero?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1604021661000"
+            "image":"https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1662703372/Croma%20Assets/Communication/Mobiles/Images/261990_hmp7jd.png/mxw_2256,f_auto"
         },
         {
             "id": 2,
-            "name": "Pixel 5",
-            "desc": "Google Pixel phone 5th generation",
+            "name": "iPhone 13",
+            "desc": "256 GB Alphine Green ",
             "price": 699,
             "color": "#00ac51",
-            "image": "https://www.telstra.com.au/content/dam/tcom/lego/2020/plans-devices/mobiles/google-pixel-5/shared-google-pixel-5-black-05-900x1200.png"
+            "image": "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1664009408/Croma%20Assets/Communication/Mobiles/Images/249840_0_ha9g80.png/mxw_2256,f_auto"
         },
         {
             "id": 3,
-            "name": "M1 Macbook Air",
-            "desc": "Apple Macbook air with apple silicon",
+            "name": "Macbook Pro 16",
+            "desc": "Apple Macbook Pro with apple silicon chip",
             "price": 1099,
             "color": "#e0bfae",
-            "image": "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP825/macbookair.png"
+            "image": "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1663415332/Croma%20Assets/Computers%20Peripherals/Laptop/Images/245227_0_ton7gy.png/mxw_2256,f_auto"
         },
         {
             "id": 4,
-            "name": "Playstation 5",
-            "desc": "Sony Playstation 5th generation",
-            "price": 500,
-            "color": "#544ee4",
-            "image": "https://i1.wp.com/freepngimages.com/wp-content/uploads/2020/07/Playstation-5-games-console-transparent-background-png-image.png?fit=1000%2C1000"
+            "name": "iPhone 12",
+            "desc": "128 GB White color",
+            "price": 899,
+            "color": "#7c95eb",
+            "image": "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1662424588/Croma%20Assets/Communication/Mobiles/Images/229925_lhcfej.png/mxw_2256,f_auto"
         },
+        
         {
             "id": 5,
+            "name": "Macbook Air 2020",
+            "desc": "Apple Macbook with M1 chip ",
+            "price": 1299,
+            "color": "#1c1c1c",
+            "image": "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1666277740/Croma%20Assets/Computers%20Peripherals/Tablets%20and%20iPads/Images/256713_0_c6ythu.png/mxw_2256,f_auto"
+        },
+        {
+            "id": 6,
+            "name": "Apple Watch Ultra",
+            "desc": "Apple Watch with yellow trail loop",
+            "price": 500,
+            "color": "#544ee4",
+            "image": "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1662734194/Croma%20Assets/Communication/Wearable%20Devices/Images/262105_0_lxud9i.png/mxw_2256,f_auto"
+        },
+        {
+            "id": 7,
             "name": "Airpods Pro",
             "desc": "Apple Aipods Pro 1st generation",
             "price": 200,
@@ -41,28 +58,14 @@
             "image": "https://crdms.images.consumerreports.org/c_lfill,w_598/prod/products/cr/models/400116-wireless-portable-headphones-apple-airpods-pro-10009323.png"
         },
         {
-            "id": 6,
-            "name": "iPad Pro",
-            "desc": "Apple iPad Pro 2020 edition",
+            "id": 8,
+            "name": "Apple iPad Pro 11",
+            "desc": "3rd generation 2022 edition",
             "price": 799,
             "color": "#f73984",
             "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-12-select-wifi-silver-202003_FMT_WHH?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1583551131102"
-        },
-        {
-            "id": 7,
-            "name": "Galaxy S21 Ultra",
-            "desc": "Samsung Galaxy S21 Ultra 2021 edition",
-            "price": 1299,
-            "color": "#1c1c1c",
-            "image": "https://lh3.googleusercontent.com/qRQPjHrhRVIs-xnfNSyiPXOH2vH97ylMacgbTKebqJtRfNH3LlYo8pN-5igsLDWUH62tGl5zNpTsl5xd8SprzGmXoCEmWFOi2-2cQVGS-r3PaRXHt62DmJHq-jrYX0UQvWZ9BA=s800-c"
-        },
-        {
-            "id": 8,
-            "name": "Galaxy S21",
-            "desc": "Samsung Galaxy S21 2021 edition",
-            "price": 899,
-            "color": "#7c95eb",
-            "image": "https://images.samsung.com/is/image/samsung/p6pim/za/galaxy-s21/gallery/za-clear-cover-galaxy-s21-5g-ef-qg991ttegww-363168624?$720_576_PNG$"
         }
+        
+        
     ]
 }

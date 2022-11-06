@@ -12,6 +12,8 @@ import 'package:velocity_x/velocity_x.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import '../widgets/drawer.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -20,7 +22,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final int days = 30;
 
-  final String name = "Codepur";
+  final String name = "sonu";
 
   final url = "https://api.jsonbin.io/b/604dbddb683e7e079c4eefd3";
 
@@ -46,41 +48,43 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final _cart = (VxState.store as MyStore).cart;
     return Scaffold(
-        backgroundColor: context.canvasColor,
-        floatingActionButton: VxBuilder(
-          mutations: {AddMutation, RemoveMutation},
-          builder: (ctx, _, __) => FloatingActionButton(
-            onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-            // ignore: deprecated_member_use
-            backgroundColor: context.theme.buttonColor,
-            child: Icon(
-              CupertinoIcons.cart,
-              color: Colors.white,
-            ),
-          ).badge(
-              color: Vx.gray200,
-              size: 22,
-              count: _cart.items.length,
-              textStyle: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              )),
-        ),
-        body: SafeArea(
-          child: Container(
-            padding: Vx.m32,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CatalogHeader(),
-                if (CatalogModel.items != null &&
-                    CatalogModel.items!.isNotEmpty)
-                  CatalogList().py16().expand()
-                else
-                  CircularProgressIndicator().centered().expand(),
-              ],
-            ),
+      appBar: AppBar(),
+      backgroundColor: context.canvasColor,
+      floatingActionButton: VxBuilder(
+        mutations: {AddMutation, RemoveMutation},
+        builder: (ctx, _, __) => FloatingActionButton(
+          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+          // ignore: deprecated_member_use
+          backgroundColor: context.theme.buttonColor,
+          child: Icon(
+            CupertinoIcons.cart,
+            color: Colors.white,
           ),
-        ));
+        ).badge(
+            color: Vx.gray200,
+            size: 22,
+            count: _cart.items.length,
+            textStyle: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            )),
+      ),
+      body: SafeArea(
+        child: Container(
+          padding: Vx.m32,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CatalogHeader(),
+              if (CatalogModel.items != null && CatalogModel.items!.isNotEmpty)
+                CatalogList().py16().expand()
+              else
+                CircularProgressIndicator().centered().expand(),
+            ],
+          ),
+        ),
+      ),
+      drawer: MyDrawer(),
+    );
   }
 }
