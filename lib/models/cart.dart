@@ -1,73 +1,54 @@
-import 'package:flutter/material.dart';
-import 'package:velocity_x/velocity_x.dart';
+import 'package:flutter_catalog/models/catalog.dart';
 
-class CartPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: context.canvasColor,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: "Cart".text.make(),
-      ),
-      body: Column(
-        children: [
-          _CartList().p32().expand(),
-          Divider(),
-          _CartTotal(),
-        ],
-      ),
-    );
+class CartModel {
+  static final cartModel = CartModel._internal();
+
+  CartModel._internal();
+
+  factory CartModel() => cartModel;
+
+  // catalog field
+  late CatalogModel _catalog;
+
+  // Collection of IDs - store Ids of each item
+  final List<int> _itemIds = [];
+
+  // Get Catalog
+  CatalogModel get catalog => _catalog;
+
+  set catalog(CatalogModel newCatalog) {
+    assert(newCatalog != null);
+    _catalog = newCatalog;
   }
-}
 
-class _CartTotal extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 200,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          // ignore: deprecated_member_use
-          "\$9999".text.xl5.color(context.theme.accentColor).make(),
-          30.widthBox,
-          ElevatedButton(
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: "Buying not supported yet.".text.make(),
-              ));
-            },
-            style: ButtonStyle(
-                backgroundColor:
-                    // ignore: deprecated_member_use
-                    MaterialStateProperty.all(context.theme.buttonColor)),
-            child: "Buy".text.white.make(),
-          ).w32(context)
-        ],
-      ),
-    );
+  // Get items in the cart
+  List<Item> get items =>
+      _itemIds.map((id) => CatalogModel.getById(id)).toList();
+
+  // Get total price
+  num get totalPrice =>
+      items.fold(0, (total, current) => total + current.price);
+
+  // Add Item
+
+  void add(Item item) {
+    _itemIds.add(item.id);
   }
-}
 
-class _CartList extends StatefulWidget {
-  @override
-  __CartListState createState() => __CartListState();
-}
+  // Remove Item
 
-class __CartListState extends State<_CartList> {
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 5,
-      itemBuilder: (context, index) => ListTile(
-        leading: Icon(Icons.done),
-        trailing: IconButton(
-          icon: Icon(Icons.remove_circle_outline),
-          onPressed: () {},
-        ),
-        title: "Item 1".text.make(),
-      ),
-    );
+  void remove(Item item) {
+    _itemIds.remove(item.id);
   }
+
+  @override
+  bool operator ==(covariant CartModel other) {
+    if (identical(this, other)) return true;
+  
+    return 
+      other._catalog == _catalog;
+  }
+
+  @override
+  int get hashCode => _catalog.hashCode;
 }
