@@ -16,6 +16,7 @@ class MyTheme {
         color: Colors.white,
         elevation: 0.0,
         iconTheme: IconThemeData(color: Colors.black),
+        // ignore: deprecated_member_use
         textTheme: Theme.of(context).textTheme,
       ));
 
@@ -24,7 +25,9 @@ class MyTheme {
       fontFamily: GoogleFonts.poppins().fontFamily,
       cardColor: Colors.black,
       canvasColor: darkCreamColor,
+      // ignore: deprecated_member_use
       buttonColor: lightBluishColor,
+      // ignore: deprecated_member_use
       accentColor: Colors.white,
       appBarTheme: AppBarTheme(
         color: Colors.black,

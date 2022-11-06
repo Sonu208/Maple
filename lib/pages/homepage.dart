@@ -6,7 +6,6 @@ import 'package:flutter_catalog/models/catalog.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 import 'package:flutter_catalog/widgets/home_widgets/catalog_header.dart';
 import 'package:flutter_catalog/widgets/home_widgets/catalog_list.dart';
-import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomePage extends StatefulWidget {
@@ -45,7 +44,10 @@ class _HomePageState extends State<HomePage> {
           onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
           // ignore: deprecated_member_use
           backgroundColor: context.theme.buttonColor,
-          child: Icon(CupertinoIcons.cart,color: Colors.white),
+          child: Icon(
+            CupertinoIcons.cart,
+            color: Colors.white,
+          ),
         ),
         body: SafeArea(
           child: Container(
