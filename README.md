@@ -1,6 +1,5 @@
 # Maple 
 
-Project Description:
 Maple is a catalogue app which will have a login page with validation, a drawer, a catalogue page with product details pages with add to cart functionality after selecting the product users will redirect to cart page where it
 will show the sum of all products cost.
 
